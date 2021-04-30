@@ -1,0 +1,145 @@
+$background: rgb(251, 176, 59);
+$title: rgb(19, 128, 115);
+$sec-title: rgb(252, 184, 76);
+$text: rgb(113, 179, 171);
+$buttons: rgb(57, 182, 159);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background;
+}
+
+//Hamburger menu button
+.menu-btn {
+  display: block;
+  width: 70px;
+  padding: 10px 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  background-color: $title;
+  text-align: center;
+  text-decoration: none;
+  font-size: 35px;
+  border: none;
+  border-radius: 100%;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $text;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+h1 {
+  margin-top: 100px;
+  line-height: 2rem;
+  color: $title;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+//Main container + content
+.main-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: $background;
+  font-family: "Roboto", sans-serif;
+  overflow: auto;
+  gap: 20px;
+
+  input {
+    margin-top: 10px;
+    color: $text;
+    width: 500px;
+    background-color: white;
+    overflow: auto;
+    padding: 20px;
+  }
+
+  #conditions {
+    height: 17px;
+    width: 25px;
+  }
+  #cond {
+    label {
+      color: $title;
+    }
+  }
+}
+
+#submit {
+  width: 250px;
+  padding: 20px;
+  background-color: $buttons;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  letter-spacing: 2px;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $text;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+//Mobile view
+@media screen and (max-width: 600px) {
+  .main-div {
+    display: flexbox;
+    flex-wrap: wrap;
+
+    input {
+      color: $text;
+      width: calc(100% - 40px);
+    }
+
+    #cond {
+      width: calc(100% - 40px);
+    }
+  }
+
+  h1 {
+    margin-top: 100px;
+    margin-right: 20px;
+    line-height: 2rem;
+    color: $title;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-align: right;
+  }
+
+  .menu-btn {
+    width: 50px;
+    padding: 5px 0;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+}
